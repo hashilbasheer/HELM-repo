@@ -1,24 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-nginx
-  labels:
-    app: nginx
+  name: aks-helloworld 
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: nginx
+      app: aks-helloworld
   template:
     metadata:
       labels:
-        app: nginx
+        app: aks-helloworld
     spec:
       containers:
         - name: aks-helloworld
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          image: ghcr.io/hashilbasheer/react-poc:"{{ .Values.image.tag }}"
           ports:
-            - name: http
-              containerPort: 80
-              protocol: TCP
+          - containerPort: 3000
