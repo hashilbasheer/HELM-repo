@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  tag: "1.16.0"
+  tag: "b4791145ae216c100e7e024e36ffc4b41a7fc948"
 
 
 service:
