@@ -1,9 +1,6 @@
 replicaCount: 2
-
 image:
   tag: "b4791145ae216c100e7e024e36ffc4b41a7fc948"
-
-
 service:
   type: ClusterIP
   port: 3000
